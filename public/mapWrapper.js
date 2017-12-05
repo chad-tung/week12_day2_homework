@@ -35,3 +35,15 @@ MapWrapper.prototype.unbounceMarkers = function() {
     marker.setAnimation(null);
   })
 };
+
+MapWrapper.prototype.moveLocation = function() {
+  this.googleMap.setCenter({lat: 22.396428, lng: 114.109497});
+};
+
+// MapWrapper.prototype.getLocation = function() {
+//   navigator.geolocation.getCurrentPosition(function(position) {
+//     this.googleMap.setCenter({lat: position.coords.latitude, lng: position.coords.longitude}).bind(this);
+//     this.addMarker({lat: position.coords.latitude, lng: position.coords.longitude}).bind(this);
+//   })
+//
+// };
