@@ -11,6 +11,7 @@ MapWrapper.prototype.addMarker = function(coords) {
     position: coords, map: this.googleMap
   });
   this.markers.push(marker);
+  return marker;
 };
 
 
@@ -23,8 +24,14 @@ MapWrapper.prototype.addClickEvent = function() {
   }.bind(this))
 };
 
-MapWrapper.prototype.bounceMarkers = function () {
+MapWrapper.prototype.bounceMarkers = function() {
   this.markers.forEach(function(marker) {
     marker.setAnimation(google.maps.Animation.BOUNCE)
+  })
+};
+
+MapWrapper.prototype.unbounceMarkers = function() {
+  this.markers.forEach(function(marker) {
+    marker.setAnimation(null);
   })
 };
