@@ -27,7 +27,7 @@ var initialise = function() {
   var myLocation = function() {
     navigator.geolocation.getCurrentPosition(function(position) {
       mainMap.googleMap.setCenter({lat: position.coords.latitude, lng: position.coords.longitude});
-      mainMap.addMarker({lat: position.coords.latitude, lng: position.coords.longitude});
+      mainMap.addMarker({lat: position.coords.latitude, lng: position.coords.longitude}).setAnimation(google.maps.Animation.BOUNCE);
     })
   }
 
